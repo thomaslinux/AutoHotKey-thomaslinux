@@ -80,6 +80,10 @@ CapsLock & Z {                               ; envoie le texte Hello Wold
 SendText "Hello World"
 }
 
+; tranparency
+; WinSetTransparent 254, "ahk_exe msedge.exe"
+; WinSetTransparent 254, "ahk_class Chrome_WidgetWin_1"
+
 ; si la fenêtre est Google Chrome
 #HotIf WinActive("ahk_exe chrome.exe")
 
