@@ -52,6 +52,7 @@ SubStr(StrLower(A_Clipboard),2)              ; insère le reste des lettres du p
 }
 CapsLock & D:: {
 if WinExist("cmd")
+; if WinExist("ahk_exe WindowsTerminal.exe")   ; pour Windows 11
     WinActivate                              ; bascule sur la fenêtre du cmd actuellement ouverte
 else
 	  Run 'cmd /k cd "C:\Users\%username%\'    ; ouvre la fenêtre du CMD dans le dossier utilisateur
@@ -79,6 +80,8 @@ CapsLock & F:: {                             ; ouvre le script autohotkey dans N
 CapsLock & Z {                               ; envoie le texte Hello Wold
 SendText "Hello World"
 }
+; 2 pour supprimer
+²::Del
 
 ; tranparency
 ; WinSetTransparent 254, "ahk_exe msedge.exe"
@@ -86,5 +89,29 @@ SendText "Hello World"
 
 ; si la fenêtre est Google Chrome
 #HotIf WinActive("ahk_exe chrome.exe")
+
+#HotIf WinActive("ahk_exe msedge.exe")
+; Verr Maj devient utile
+CapsLock & A:: {
+; Send(FormatTime(A_Now, "/MM/yyyy"))
+SendText "example"
+}
+
+#HotIf WinActive("ahk_exe WindowsTerminal.exe")
+CapsLock & Z:: {
+SendText "user "
+Send(A_Clipboard)
+}
+CapsLock & E:: {
+SendText "checkin "
+Send(A_Clipboard)
+}
+; 2 pour supprimer
+²:: {
+Send "{Ctrl & BS}"
+}
+MButton:: {
+Send(A_Clipboard)
+}
 
 #HotIf
