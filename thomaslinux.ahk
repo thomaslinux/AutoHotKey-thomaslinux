@@ -1,3 +1,9 @@
+; configuration
+cord := "Cordialement,{Enter}Thomas"
+::cord:: {
+Send cord
+}
+
 ; Correcteur
 :**:é  ::É
 :*C:A :: {
@@ -6,9 +12,6 @@ Send "À "
 :**:Etait::Était
 :**:bjr ::Bonjour,
 :C:Ca::Ça
-::cord:: {
-Send "Cordialement,{Enter}Thomas"
-}
 
 ; Speakers/Heaphones/Output Controls/Multimedia
 #WheelUp::Send "{Volume_Up 2}"	    ; #Winkey + Scroll mouse wheel up = increase volume
